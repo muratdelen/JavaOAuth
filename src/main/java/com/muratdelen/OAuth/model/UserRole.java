@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Roles")
+@Table(name="user_roles")
 public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,4 +18,5 @@ public class UserRole {
     @ManyToOne
     @JoinColumn(name="role_id",nullable = false)
     private Role role;
+    private boolean active = true;
 }
